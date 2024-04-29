@@ -30,4 +30,4 @@ num	{digito}+(\.{digito}*(E[+-]?{digito}+)?)?
 "||" {return TDISJ;}
 "!" {return TNEG;}
 \n	{return TFIM;}
-{num}	{yylval=atof(yytext); return TNUM;}
+{num}	{yylval=atof(yytext); return TNUM;} 

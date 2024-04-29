@@ -70,7 +70,9 @@ extern int yydebug;
     TCONJ = 271,                   /* TCONJ  */
     TDISJ = 272,                   /* TDISJ  */
     TNEG = 273,                    /* TNEG  */
-    TFIM = 274                     /* TFIM  */
+    TID = 274,                     /* TID  */
+    TASSIGN = 275,                 /* TASSIGN  */
+    TFIM = 276                     /* TFIM  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif

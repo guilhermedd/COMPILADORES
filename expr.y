@@ -34,8 +34,6 @@ Termo: Termo TMUL Fator {$$ = $1 * $3;}
 	;
 Fator: TNUM
 	| TAPAR Expr TFPAR {$$ = $2;}
-	| ID
-	| FuncCall
 	;
 Rel : Expr TMENI Expr {$$ = $1 <= $3;}
 	| Expr TMAII Expr {$$ = $1 >= $3;}

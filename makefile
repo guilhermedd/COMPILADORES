@@ -6,8 +6,8 @@ expr.tab.c expr.tab.h: expr.y
 lex.yy.c: expr.l
 	flex expr.l
 
-main: lex.yy.c expr.tab.c
+main: lex.yy.c expr.tab.c 
 	gcc -o expr lex.yy.c expr.tab.c exprMain.c
-
-clean:
+	
+clean: 
 	rm -f lex.yy.c expr.tab.c expr.tab.h
