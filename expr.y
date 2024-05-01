@@ -25,12 +25,14 @@ int yylex();
 Linha :Expr TFIM {printf("Resultado:%lf\n", $1);exit(0);}
 	| Rel TFIM {if ($1 != 0) printf("True\n"); else printf("False\n");exit(0);}
 	| Log TFIM {if ($1 != 0) printf("True\n"); else printf("False\n");exit(0);}
+	| BlocoPrincipal TFIM {printf("Bloco Principal!\n");exit(0);}
+	| Bloco TFIM {printf("Bloco!\n");exit(0);}
 	| Programa TFIM {printf("Programa!\n");exit(0);}
 	| ListaFuncoes TFIM {printf("Lista Funcoes!\n");exit(0);}
-	| Funcao TFIM {printf("Funcao!\n");exit(0);}
 	| CmdAtrib TFIM {printf("Atribuido!\n");exit(0);}
 	| Parametro TFIM {printf("Parametro!\n");exit(0);}
 	| ListaParametros TFIM {printf("Lista Parametros!\n");exit(0);}
+	| Declaracao TFIM {printf("Declaracao!\n");exit(0);}
 	;
 Expr: Expr TADD Termo {$$ = $1 + $3;}
 	| Expr TSUB Termo {$$ = $1 - $3;}
@@ -42,6 +44,7 @@ Termo: Termo TMUL Fator {$$ = $1 * $3;}
 	;
 Fator: TNUM
 	| TAPAR Expr TFPAR {$$ = $2;}
+	| ChamadaFuncao
 	;
 Rel : Expr TMENI Expr {$$ = $1 <= $3;}
 	| Expr TMAII Expr {$$ = $1 >= $3;}
@@ -113,7 +116,7 @@ CmdEnquanto : TWHILE TAPAR Log TFPAR Bloco
 CmdAtrib : TID TATRIB Expr TPEV
 	| TID TATRIB TLITERAL TPEV
 	;
-CmdEscrita : TPRINT TAPAR Log TFPAR TPEV
+CmdEscrita : TPRINT TAPAR Expr TFPAR TPEV
 	| TPRINT TAPAR TLITERAL TFPAR TPEV
 	;
 CmdLeitura : TREAD TAPAR TID TFPAR TPEV
