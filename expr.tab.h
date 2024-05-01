@@ -72,7 +72,23 @@ extern int yydebug;
     TNEG = 273,                    /* TNEG  */
     TID = 274,                     /* TID  */
     TASSIGN = 275,                 /* TASSIGN  */
-    TFIM = 276                     /* TFIM  */
+    TFIM = 276,                    /* TFIM  */
+    TACH = 277,                    /* TACH  */
+    TFCH = 278,                    /* TFCH  */
+    TVOID = 279,                   /* TVOID  */
+    TVIRGULA = 280,                /* TVIRGULA  */
+    TPEV = 281,                    /* TPEV  */
+    TINT = 282,                    /* TINT  */
+    TSTR = 283,                    /* TSTR  */
+    TFLOAT = 284,                  /* TFLOAT  */
+    TRETURN = 285,                 /* TRETURN  */
+    TIF = 286,                     /* TIF  */
+    TELSE = 287,                   /* TELSE  */
+    TWHILE = 288,                  /* TWHILE  */
+    TPRINT = 289,                  /* TPRINT  */
+    TREAD = 290,                   /* TREAD  */
+    TATRIB = 291,                  /* TATRIB  */
+    TLITERAL = 292                 /* TLITERAL  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
