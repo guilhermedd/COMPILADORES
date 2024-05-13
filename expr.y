@@ -22,17 +22,7 @@ int yylex();
 
 
 %%
-Linha :Expr TFIM {printf("Resultado:%lf\n", $1);exit(0);}
-	| Rel TFIM {if ($1 != 0) printf("True\n"); else printf("False\n");exit(0);}
-	| Log TFIM {if ($1 != 0) printf("True\n"); else printf("False\n");exit(0);}
-	| BlocoPrincipal TFIM {printf("Bloco Principal!\n");exit(0);}
-	| Bloco TFIM {printf("Bloco!\n");exit(0);}
-	| Programa TFIM {printf("Programa!\n");exit(0);}
-	| ListaFuncoes TFIM {printf("Lista Funcoes!\n");exit(0);}
-	| CmdAtrib TFIM {printf("Atribuido!\n");exit(0);}
-	| Parametro TFIM {printf("Parametro!\n");exit(0);}
-	| ListaParametros TFIM {printf("Lista Parametros!\n");exit(0);}
-	| Declaracao TFIM {printf("Declaracao!\n");exit(0);}
+Linha :Programa TFIM {printf("Programa!\n");exit(0);}
 	;
 Expr: Expr TADD Termo {$$ = $1 + $3;}
 	| Expr TSUB Termo {$$ = $1 - $3;}
